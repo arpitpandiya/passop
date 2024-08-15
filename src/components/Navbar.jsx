@@ -22,7 +22,7 @@ const Navbar = () => {
             </a>
           </li>
         </ul> */}
-        <button className="text-white bg-green-700 my-4 h-10 rounded-full flex justify-between items-center">
+        <button className="text-white bg-green-700 my-4 h-10 rounded-full flex justify-between items-center ring-white ring-1">
           <img className="invert py-1 w-10 " src="/icons/github.png" alt="github logo" />
           <span className="font-bold px-2">GitHub</span>
         </button>
