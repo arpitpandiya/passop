@@ -7,11 +7,11 @@ const cors = require("cors")
 dotenv.config();
 
 // Connection URL
-const url = "mongodb://localhost:27017";
+const url = 'mongodb+srv://arpit:arpit@password.fl2wt.mongodb.net/?retryWrites=true&w=majority&appName=password'
 const client = new MongoClient(url);
 
 // Database Name
-const dbName = "passop";
+const dbName = "password";
 const app = express();
 const port = 3000;
 app.use(bodyparser.json());
