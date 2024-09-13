@@ -7,7 +7,8 @@ const cors = require("cors")
 dotenv.config();
 
 // Connection URL
-const url = 'mongodb+srv://arpit:arpit@password.fl2wt.mongodb.net/?retryWrites=true&w=majority&appName=password'
+const url = process.env.MONGODB_URL;
+
 const client = new MongoClient(url);
 
 // Database Name
