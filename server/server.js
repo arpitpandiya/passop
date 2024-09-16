@@ -3,7 +3,8 @@ const dotenv = require("dotenv");
 const { MongoClient } = require("mongodb");
 const bodyparser = require("body-parser");
 const cors = require("cors")
-
+const AuthRouter = require('./Routes/AuthRouter')
+require('./Models/db')
 dotenv.config();
 
 // Connection URL
@@ -14,11 +15,13 @@ const client = new MongoClient(url);
 // Database Name
 const dbName = "password";
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 app.use(bodyparser.json());
 app.use(cors());
-
 client.connect();
+
+// auth
+app.use('/auth', AuthRouter)
 
 // Get all the passwords
 app.get("/", async (req, res) => {
