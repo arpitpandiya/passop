@@ -4,6 +4,7 @@ const { MongoClient } = require("mongodb");
 const bodyparser = require("body-parser");
 const cors = require("cors")
 const AuthRouter = require('./Routes/AuthRouter')
+const ProductRouter = require('./Routes/ProductRouter')
 require('./Models/db')
 dotenv.config();
 
@@ -22,6 +23,7 @@ client.connect();
 
 // auth
 app.use('/auth', AuthRouter)
+app.use('/products', ProductRouter)
 
 // Get all the passwords
 app.get("/", async (req, res) => {
