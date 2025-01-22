@@ -1,6 +1,11 @@
 import React from "react";
+import {Link, useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  // let navigate = useNavigate();
+  // const handleclick = () =>{
+  //   navigate("/login");
+  // }
   return (
     <nav className="bg-slate-800 text-white">
       <div className="mycontainer flex justify-between items-center py-5 px-4 h-14">
@@ -9,23 +14,16 @@ const Navbar = () => {
           <span>Pass</span>
           <span className="text-green-500">OP/&gt;</span>
         </div>
-        {/* <ul>
-          <li className="flex gap-4">
-            <a className="hover:font-bold" href="/">
-              Home
-            </a>
-            <a className="hover:font-bold" href="#">
-              About
-            </a>
-            <a className="hover:font-bold" href="#">
-              Contact
-            </a>
-          </li>
-        </ul> */}
-        <button className="text-white bg-green-700 my-4 h-10 rounded-full flex justify-between items-center ring-white ring-1">
-          <img className="invert py-1 w-10 " src="/icons/github.png" alt="github logo" />
-          <span className="font-bold px-2">GitHub</span>
-        </button>
+
+        
+        <form className=" flex justify-between items-center gap-3">
+          <Link className="font-bold text-white bg-green-700 my-6 px-4 py-1  h- rounded-full  ring-white ring-1" to="/login" role="button">
+            Login
+          </Link>
+          <Link className="font-bold text-white bg-green-700 my-6 px-4 py-1  h- rounded-full ring-white ring-1" to="/signup" role="button">
+            Signup
+          </Link>
+        </form>
       </div>
     </nav>
   );
